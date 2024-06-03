@@ -43,7 +43,7 @@ const showMessage = (message, sender) => {
 //Greeting
 const greeting = () => {
   // here we call the function showMessage, that we declared earlier with the argument "Hello there, What's your name?" for message, and the argument "bot" for sender
-  showMessage("Hello and welcome to the Coffee by D&P! What's your name?", "bot");
+  showMessage("Hello and welcome to the Coffee by PS! What's your name?", "bot");
   console.log("greeting"); //can be omitted
 };
 
@@ -52,7 +52,7 @@ const greeting = () => {
 const handleInput = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let userName = nameInput.value;
-  showMessage(`Hi! I am ${userName}.`, "user"); //calling on function
+  showMessage(`${userName}.`, "user"); //calling on function
   console.log("Handle input name given");
   nameInput.value = ""; //erases the answer field
   setTimeout(() => question1(userName), 500);
@@ -78,11 +78,11 @@ const handleInput2 = (event) => {
 
 //Bot asking to make a coffee order
 const question2 = (event) => {
-  showMessage(`Mmm 😏 regardless your feeling your day can always get better with a cup of coffee! Would you like some?`, "bot");
+  showMessage(`Mmm 😏 your day can always get better with a cup of coffee! Would you like some?`, "bot");
   console.log("Bot asking to make a coffee order"); //can be omitted
   inputWrapper.innerHTML = `
-  <button id="ofCourse" type="submit" class="chat-btn">Of course!</button>
-  <button id="noThanks" type="submit" class="chat-btn">I will pass</button>
+  <button id="ofCourse" type="submit" class="chat-btn">Yes, please!</button>
+  <button id="noThanks" type="submit" class="chat-btn">No, thank you!</button>
   `
   document.getElementById("ofCourse").addEventListener("click", ofCourseChoice);
   document.getElementById("noThanks").addEventListener("click", noThanksChoice);
@@ -92,7 +92,7 @@ const question2 = (event) => {
 const noThanksChoice = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let denierAnswer = inputWrapper.value;
-  showMessage("No thank you. I'll pass!", "user");
+  showMessage("No, thank you!", "user");
   inputWrapper.value = "";
   console.log("Denied coffee wish from use"); //can be omitted
   setTimeout(() => byeChat(denierAnswer), 1000);
@@ -100,7 +100,7 @@ const noThanksChoice = (event) => {
 
 //Bot ending the chat
 const byeChat = () => {
-  showMessage("Sure! No problem. Have a nice day tho!", "bot");
+  showMessage("Acknowledged! I am closing down the chat,then. I hope to see you soon!", "bot");
   console.log("Ending chat"); //can be omitted
   inputWrapper.innerHTML = " "
 };
@@ -109,7 +109,7 @@ const byeChat = () => {
 const ofCourseChoice = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let doerAnswer = inputWrapper.value;
-  showMessage("Of course I want!", "user");
+  showMessage("Yes, please!", "user");
   inputWrapper.value = "";
   console.log("User confirmed coffee wish"); //can be omitted
   setTimeout(() => question4(doerAnswer), 1000);
@@ -120,55 +120,55 @@ const question4 = (answerName) => {
   showMessage("What kind of coffee would you like to order?", "bot");
   console.log("Bot asking which coffee user wants to order"); //can be omitted
   inputWrapper.innerHTML = `
-  <button id="blackCoffee" type="submit" class="chat-btn">Black Coffee</button>
-  <button id="macchiato" type="submit" class="chat-btn">Macchiato</button>
-  <button id="withMilk" type="submit" class="chat-btn">With Milk</button>
+  <button id="blackCoffee" type="submit" class="chat-btn">Black coffee</button>
+  <button id="espresso" type="submit" class="chat-btn">Espresso</button>
+  <button id="latte" type="submit" class="chat-btn">Latte</button>
   `
   document.getElementById("blackCoffee").addEventListener("click", blackChoice);
-  document.getElementById("macchiato").addEventListener("click", macchiatoChoice);
-  document.getElementById("withMilk").addEventListener("click", withMilkChoice);
+  document.getElementById("espresso").addEventListener("click", espressoChoice);
+  document.getElementById("latte").addEventListener("click", latteChoice);
 };
 
 
 // 3 different choices
-const blackChoice = (event) => {
+const blackCoffeeChoice = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let coffeeAnswer = inputWrapper.value;
-  showMessage(`I would love some black coffee!`, "user");
+  showMessage(`Black coffee`, "user");
   inputWrapper.value = "";
-  console.log("black choice"); //can be omitted
+  console.log("black coffee"); //can be omitted
   setTimeout(() => question5(coffeeAnswer), 1000);
 };
 
-const macchiatoChoice = (event) => {
+const espressoChoice = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let coffeeAnswer = inputWrapper.value;
-  showMessage(`A macchiato it will be!`, "user");
+  showMessage(`Espresso`, "user");
   inputWrapper.value = "";
-  console.log("machiato choice"); //can be omitted
+  console.log("espresso"); //can be omitted
   setTimeout(() => question5(coffeeAnswer), 1000);
 };
 
-const withMilkChoice = (event) => {
+const latteChoice = (event) => {
   event.preventDefault(); //prevents refreshing the page
   let coffeeAnswer = inputWrapper.value;
-  showMessage('Coffee with milk, plz!.', "user");
+  showMessage('Latte', "user");
   inputWrapper.value = '';
-  console.log("with milk choice"); //can be omitted
+  console.log("latte"); //can be omitted
   setTimeout(() => question5(coffeeAnswer), 1000);
 };
 
 //Bot asking take away or drink here
 const question5 = () => {
-  showMessage("Stress or zen mode?", "bot");
+  showMessage("Take away or drink here?", "bot");
   console.log("Bot asking take away or drink here"); //can be omitted
   inputWrapper.innerHTML = `
   <button id="takeAwayBtn">Take away</button>
   <button id="drinkHereBtn">Drink here</button>
   `
 
-  document.getElementById("takeAwayBtn").addEventListener("click", () => finalDecision("take away"))
-  document.getElementById("drinkHereBtn").addEventListener("click", () => finalDecision("drink here"))
+  document.getElementById("takeAwayBtn").addEventListener("click", () => finalDecision("Take away"))
+  document.getElementById("drinkHereBtn").addEventListener("click", () => finalDecision("Drink here"))
   ;}
 
 //Final decision and video 
