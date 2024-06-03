@@ -124,7 +124,7 @@ const question4 = (answerName) => {
   <button id="espresso" type="submit" class="chat-btn">Espresso</button>
   <button id="latte" type="submit" class="chat-btn">Latte</button>
   `
-  document.getElementById("blackCoffee").addEventListener("click", blackChoice);
+  document.getElementById("blackCoffee").addEventListener("click", blackCoffeeChoice);
   document.getElementById("espresso").addEventListener("click", espressoChoice);
   document.getElementById("latte").addEventListener("click", latteChoice);
 };
