@@ -100,7 +100,7 @@ const noThanksChoice = (event) => {
 
 //Bot ending the chat
 const byeChat = () => {
-  showMessage("Acknowledged! I am closing down the chat,then. I hope to see you soon!", "bot");
+  showMessage("Acknowledged! I am ending the chat,then. I hope to see you soon!", "bot");
   console.log("Ending chat"); //can be omitted
   inputWrapper.innerHTML = " "
 };
