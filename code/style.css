@@ -144,8 +144,23 @@ button {
   transition: all 0.3s ease;
 }
 
-
 button:hover {
   opacity: 0.9;
   transition: all 0.2s ease;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+  .input-wrapper {
+    padding: 8px;
+  }
+
+  .input-wrapper form {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  button {
+    margin-right: 0;
+    margin-top: 8px; /* Space between input and button */
+  }
 }
