@@ -174,7 +174,7 @@ const question5 = () => {
 //Final decision and video 
 const finalDecision = (finalDecision) => {
 
-  if (finalDecision === "take away"){
+  if (finalDecision === "Take away"){
     setTimeout(() => inputWrapper.innerHTML = `<span>`, 0);
     setTimeout(() => showMessage("Take away", "user"), 500);
     setTimeout(() => inputWrapper.innerHTML = `<p>Please wait<p>`, 1500);
